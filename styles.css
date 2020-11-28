@@ -1,0 +1,135 @@
+.header{
+    padding:15px;
+    background-color:#3366ff;
+}
+
+h1{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+#loginbtn{
+  
+  background-color: #333; /* Grey */
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+#signupbtn{
+background-color: #333 ; /* Grey */
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.navbar{
+    
+    background-color: #333;
+    width: 100%;
+    
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  li {
+    float: right;
+    border-right: 1px solid #bbb;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  .navbar input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    border-radius: 5px;
+    width: 20em;
+  }
+
+  .navbar #search {
+    float: center;
+  }
+
+  .navbar #searchbtn{
+    float: center;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+
+  #images {
+    float: left;
+    width: 20%;
+    padding: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 7em;
+    padding-top: 7em;
+  }
+
+  .body::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .body{
+    box-sizing: border-box;
+  }
+
+  .previousround{
+    border-radius: 50%;
+    background-color: #333;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    color: white;
+    
+
+  }
+
+  .nextround{
+    border-radius: 50%;
+    background-color: #333;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    color: white;
+    
+    
+  }
+
+  
+
+  .footer{
+    padding:5px;
+    background-color:#3366ff;
+
+  }
