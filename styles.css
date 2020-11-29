@@ -1,18 +1,23 @@
-.header{
+.header {
     padding:15px;
     background-color:#3366ff;
 }
 
-h1{
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-family: Impact, "Haettenschweiler", 'Arial Narrow Bold', sans-serif;
+}
+
+p {
     text-align: center;
 }
 
-p{
-    text-align: center;
+body {
+  height: 500px;
 }
 
-#loginbtn{
-  
+#loginbtn {
   background-color: #333; /* Grey */
   border: none;
   color: white;
@@ -23,8 +28,8 @@ p{
   border-radius: 5px;
 }
 
-#signupbtn{
-background-color: #333 ; /* Grey */
+#signupbtn {
+  background-color: #333 ; /* Grey */
   border: none;
   color: white;
   padding: 10px 22px;
@@ -34,47 +39,54 @@ background-color: #333 ; /* Grey */
   border-radius: 5px;
 }
 
-.navbar{
-    
-    background-color: #333;
-    width: 100%;
-    
+#loginbtn a:hover {
+  color: green;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
+#signupbtn a:hover {
+  color: red; 
+}
 
-  li {
-    float: right;
-    border-right: 1px solid #bbb;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  .navbar input[type=text] {
+/* Style the  navigation bar */
+.navbar {    
+    background-color: #333;
+    overflow: hidden;
+    width: 100%;  
+    height: 50px;
+}
+
+/* Style the nav links */
+.navbar a {
+  float: left;
+  display: block;
+  color: blueviolet;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  color: red;
+  background-color: white;
+}
+
+.navbar input[type=text] {
     padding: 6px;
     margin-top: 8px;
     font-size: 17px;
     border: none;
     border-radius: 5px;
     width: 20em;
-  }
+}
 
-  .navbar #search {
-    float: center;
-  }
+/* Moving the searh to the right */
+.navbar .searchbar {
+  float: right;
 
-  .navbar #searchbtn{
-    float: center;
+}
+
+.navbar #searchbtn{
+    padding-left: 60px;
     padding: 6px 10px;
     margin-top: 8px;
     margin-right: 16px;
@@ -82,9 +94,9 @@ ul {
     font-size: 17px;
     border: none;
     cursor: pointer;
-  }
+}
 
-  #images {
+#images {
     float: left;
     width: 20%;
     padding: 5px;
@@ -93,43 +105,94 @@ ul {
     margin-right: auto;
     padding-left: 7em;
     padding-top: 7em;
-  }
+}
 
-  .body::after {
+.body::after {
     content: "";
     clear: both;
     display: table;
-  }
-  .body{
+}
+
+.body{
     box-sizing: border-box;
-  }
+}
 
-  .previousround{
+.browsebuttons{
+  display: flex;
+  justify-content: center;
+}
+
+.previous-round{
     border-radius: 50%;
     background-color: #333;
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
     color: white;
-    
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
 
-  }
+a:hover {
+  background-color:green;
+  color: black;
+}
 
-  .nextround{
+.next-round{
     border-radius: 50%;
     background-color: #333;
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
-    color: white;
-    
-    
-  }
+    color: white;   
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
 
-  
+a:hover {
+  background-color:green;
+  color: black;
+}
 
-  .footer{
+.images {
+    display: flex;
+    direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+img {
+  width: 230px;
+}
+
+.pipes {
+  padding: 10px;
+  border: 1px solid grey;
+}
+
+.cement {
+  padding: 10px;
+  border: 1px solid grey;
+}
+
+.roof {
+  padding: 10px;
+  border: 1px solid grey;
+}
+
+.board {
+  padding: 10px;
+  border: 1px solid grey;
+}
+
+.facuet {
+  padding: 10px;
+  border: 1px solid grey;
+}
+
+.footer{
     padding:5px;
     background-color:#3366ff;
 
-  }
+}
