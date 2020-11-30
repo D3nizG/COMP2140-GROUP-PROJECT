@@ -39,6 +39,35 @@ body {
   border-radius: 5px;
 }
 
+#cart{
+  background-color: #333; /* Grey */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 10px 22px;
+}
+
+.add-cart{
+
+    
+    text-align: center;
+    border-radius: 5px;
+    background-color: #333; /* Grey */
+    color: white;
+
+}
+
+.images:hover .add-cart{
+    bottom: 10px;
+    padding:10px;
+    text-decoration: none;
+}
+
+
+
 #loginbtn a:hover {
   color: green;
 }
@@ -154,45 +183,36 @@ a:hover {
   color: black;
 }
 
-.images {
-    display: flex;
-    direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 12px;
+.imagediv::after{
+  
+  
+  content: "";
+  clear: both;
+  display: table;
+  box-sizing: border-box;
 }
 
 img {
   width: 230px;
 }
 
-.pipes {
-  padding: 10px;
-  border: 1px solid grey;
+.images{
+  float:left;
+  width:20%;
+  padding:5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 4em;
+  padding-right: 4em;
 }
 
-.cement {
-  padding: 10px;
-  border: 1px solid grey;
-}
 
-.roof {
-  padding: 10px;
-  border: 1px solid grey;
-}
-
-.board {
-  padding: 10px;
-  border: 1px solid grey;
-}
-
-.facuet {
-  padding: 10px;
-  border: 1px solid grey;
-}
 
 .footer{
-    padding:5px;
+    padding:2px;
     background-color:#3366ff;
+
+    
 
 }
