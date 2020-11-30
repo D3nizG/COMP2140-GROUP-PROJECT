@@ -1,6 +1,10 @@
 window.onload = function () {
 
+<<<<<<< HEAD
     /*The login Button*/
+=======
+    /*The Lookup Country Button*/
+>>>>>>> 33bb13e59b08dc126b1f729afae1394874338c08
     document.getElementById("loginbtn").addEventListener('click', function () {
 
         /* Sending a http request to the server*/
@@ -21,6 +25,7 @@ window.onload = function () {
     });
 
 
+<<<<<<< HEAD
     function getUSerData() {
         var emailaddr = documentgetElementbyId(emailaddr).value;
         var password = documentgetElementbyId(password).value;
@@ -40,3 +45,7 @@ window.onload = function () {
         }
 
     }
+=======
+
+}
+>>>>>>> 33bb13e59b08dc126b1f729afae1394874338c08
