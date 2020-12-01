@@ -14,16 +14,18 @@
                 <div class="logo">
                     <img src="logo.png">
                 </div>
-                <form id="login" class="text-field">
-                    <input type="text" class="txtbox" placeholder="Enter Account Id or Email address" required>
-                    <input type="text" class="txtbox" placeholder="Please Enter Password" required>
-                    <button type="submit" class="sbtn">Login</button>
+                <form method="post" action="includes/login-inc.php" id="login" class="text-field">
+                    <input name="username" type="text" class="txtbox" placeholder="Enter Account Id or Email address" required>
+                    <input name="password" type="password" class="txtbox" placeholder="Please Enter Password" required>
+                    <button name="submit" type="submit" class="sbtn">Login</button>
                 </form>
-                <form id="signup" class="text-field">
-                    <input type="text" class="txtbox" placeholder="Create Account Id" required>
-                    <input type="email" class="txtbox" placeholder="Enter Email address" required>
-                    <input type="text" class="txtbox" placeholder=" Choose Password" required>
-                    <button type="submit" class="sbtn">Create an Account</button>
+				
+				
+                <form method="post" action="includes/register-inc.php" id="signup" class="text-field">
+                    <input name="username" type="text" class="txtbox" placeholder="Create Account Id" required>
+                    <input name="email" type="email" class="txtbox" placeholder="Enter Email address" required>
+                    <input name="password" type="password" class="txtbox" placeholder=" Choose Password" required>
+                    <button name="submit" type="submit" class="sbtn">Create an Account</button>
                 </form>
             </div>
         </div>
