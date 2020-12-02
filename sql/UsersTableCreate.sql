@@ -1,4 +1,5 @@
 USE SevenMilesHardwareDB;
+DROP TABLE IF EXISTS Users;
 CREATE TABLE Users (
     id INT AUTO_INCREMENT,
     username VARCHAR(64),
