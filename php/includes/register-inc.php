@@ -35,7 +35,7 @@ if(isset($_POST['submit']))
 	}
 	else
 	{
-		$sql = "SELECT * FROM customers WHERE username = ? or email = ?;";
+		$sql = "SELECT * FROM users WHERE username = ? or email = ?;";
 
 		$stmt = mysqli_stmt_init($dbs);
 		if(!mysqli_stmt_prepare($stmt, $sql))
@@ -56,7 +56,7 @@ if(isset($_POST['submit']))
 			}
 			else
 			{
-				$sql = "INSERT INTO customers (username, email, password) VALUES (?, ?, ?)";
+				$sql = "INSERT INTO users (username, email, passcode) VALUES (?, ?, ?)";
 				$stmt = mysqli_stmt_init($dbs);
 				if(!mysqli_stmt_prepare($stmt, $sql))
 				{
