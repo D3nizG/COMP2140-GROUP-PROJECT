@@ -8,7 +8,7 @@ function redirect($location)
 
 if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true)
 {
-	header("Location: ../welcome.php");
+	header("Location: ../SMH.html");
 	exit();
 }
 else
@@ -29,12 +29,12 @@ else
 		   empty($password))
 		{
 			// NOTE(afb) :: Either password or username not enetered.
-			redirect("../login.php");
+			redirect("../login.php?error=incompletefields&username=".$username);
 		}
 		else
 		{
 			// NOTE(afb) :: Validate username and password.
-			$sql = "SELECT * FROM customers WHERE username = ? OR email = ?";
+			$sql = "SELECT * FROM users WHERE username = ? OR email = ?";
 			$stmt = mysqli_stmt_init($dbs);
 
 			if(!mysqli_stmt_prepare($stmt, $sql))
@@ -49,14 +49,14 @@ else
 				$result = mysqli_stmt_get_result($stmt);
 				if($row = mysqli_fetch_assoc($result))
 				{
-					$storedPass = $row['password'];
+					$storedPass = $row['passcode'];
 					if(password_verify($password, $storedPass))
 					{
 						session_start();
 						$_SESSION['sesssionStart'] = true;
 						$_SESSION['sessionID'] = $row['id'];
 						$_SESSION['sessionUser'] = $row['username']; 
-						redirect("../index.php");
+						redirect("../SMH.html?loginsuccess");
 						exit();
 					}
 					else
