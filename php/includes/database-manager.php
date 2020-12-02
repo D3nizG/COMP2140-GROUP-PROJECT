@@ -15,4 +15,3 @@ if(!$dbs)
 	die("MySQLi connection error " . mysqli_connect_error());
 }
 ?>
-.

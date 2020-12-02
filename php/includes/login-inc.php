@@ -53,10 +53,11 @@ else
 					if(password_verify($password, $storedPass))
 					{
 						session_start();
-						$_SESSION['sesssionStart'] = true;
+						$_SESSION['sessionStart'] = true;
 						$_SESSION['sessionID'] = $row['id'];
 						$_SESSION['sessionUser'] = $row['username']; 
-						redirect("../SMH.html?loginsuccess");
+                        
+						redirect("../store.php?loginsuccess");
 						exit();
 					}
 					else

@@ -17,7 +17,7 @@
 				
                 <form method="post" action="includes/login-inc.php" id="login" class="text-field">
                     <input type="text" name="username" class="txtbox" placeholder="Enter Account Id or Email address" required>
-                    <input type="text" name="password" class="txtbox" placeholder="Please Enter Password" required>
+                    <input type="password" name="password" class="txtbox" placeholder="Please Enter Password" required>
                     <button type="submit" name="submit" class="sbtn">Login</button>
                 </form>
 

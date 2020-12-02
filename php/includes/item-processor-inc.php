@@ -27,9 +27,6 @@ function generateDataFromDatabase()
 			$counter = 0;
 			while($row = mysqli_fetch_assoc($result))
 			{
-				echo "<br>". $row["id"] . " " . $row["itemName"] . " " .
-					 $row["quantity"] . " " . $row["price"] . " " .
-					 $row["refName"] . " " . $row["totalSold"];
 
 				$item = array("id"=>$row["id"], "name"=>$row["itemName"],
 							  "stock"=>$row["quantity"],
@@ -58,8 +55,5 @@ function generateDataFromDatabase()
 
 	return $itemArray;
 }
-
-$items = generateDataFromDatabase();
-
 
 ?>
