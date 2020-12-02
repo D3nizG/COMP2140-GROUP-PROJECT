@@ -106,30 +106,6 @@ body {
   padding: 10px 22px;
 }
 
-.add-cart{
-
-    
-    text-align: center;
-    border-radius: 5px;
-    background-color: #333; /* Grey */
-    color: white;
-
-}
-
-.images:hover .add-cart{
-    bottom: 10px;
-    padding:10px;
-    text-decoration: none;
-}
-
-
-#loginbtn a:hover {
-  color: green;
-}
-
-#signupbtn a:hover {
-  color: red; 
-}
 
 /* Style the  navigation bar */
 .navbar {    
@@ -180,26 +156,7 @@ body {
     cursor: pointer;
 }
 
-#images {
-    float: left;
-    width: 20%;
-    padding: 5px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 7em;
-    padding-top: 7em;
-}
 
-.body::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.body{
-    box-sizing: border-box;
-}
 
 .browsebuttons{
   display: flex;
@@ -351,4 +308,20 @@ img {
   padding: 5px;
 }
 
-/* css for cart*/
+/* css for footer*/
+.footer{
+  padding:2px;
+  background-color:#3366ff;
+
+  
+
+}
+
+/** css for checkout page*/
+h3{
+  color: #000;
+}
+
+label{
+  color: #000;
+}
