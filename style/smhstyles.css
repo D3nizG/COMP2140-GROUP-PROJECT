@@ -287,9 +287,68 @@ img {
     padding:2px;
     background-color:#3366ff;
     text-align:center;
-
+}
     
+/*css for shopall  */
 
+.btn-primary {
+  color: white;
+  background-color: #56CCF2;
+  border: none;
+  border-radius: .3em;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #2D9CDB;
+}
+
+.shop-item {
+  margin: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.shop-item-details {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.shop-item-image {
+  height: 250px;
+}
+
+.btn {
+  text-align: center;
+  vertical-align: middle;
+  padding: .67em .67em;
+  cursor: pointer;
+}
+
+.section-header {
+  font-family: "Metal Mania";
+  font-weight: normal;
+  color: #333;
+  text-align: center;
+  font-size: 2.5em;
+}
+
+.content-section {
+  margin: 1em;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1.5em;
 }
 
 
+.shop-item-details {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+/* css for cart*/
