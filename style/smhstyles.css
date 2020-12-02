@@ -176,14 +176,7 @@ body {
   background-color: white;
 }
 
-.navbar input[type=text] {
-    padding: 6px;
-    margin-top: 8px;
-    font-size: 17px;
-    border: none;
-    border-radius: 5px;
-    width: 20em;
-}
+
 
 /* Moving the searh to the right */
 .navbar .searchbar {
