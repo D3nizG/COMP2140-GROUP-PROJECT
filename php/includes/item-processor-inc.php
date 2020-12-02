@@ -9,18 +9,57 @@ function redirect($location)
 	exit();
 }
 
-if($dbsActive)
+function generateDataFromDatabase()
 {
-	$sql = "SELECT * FROM items";
+	$itemArray = array();
 
-	$stmt = mysqli_stmt_init($dbs);
-	if(!mysqli_stmt_prepare($stmt, $sql))
-	{
-		// NOTE(afb) :: Cannoot retrieve from database
-		exit();
-		redirect("../SMH.html?error=sqlerrorll");
-	}
+	global $dbsActive;
+	global $dbs;
 	
+	if($dbsActive)
+	{
+		$sql = "SELECT * FROM items WHERE 1";
+		
+		if($result = mysqli_query($dbs, $sql))
+		{
+			// Success
+
+			$counter = 0;
+			while($row = mysqli_fetch_assoc($result))
+			{
+				echo "<br>". $row["id"] . " " . $row["itemName"] . " " .
+					 $row["quantity"] . " " . $row["price"] . " " .
+					 $row["refName"] . " " . $row["totalSold"];
+
+				$item = array("id"=>$row["id"], "name"=>$row["itemName"],
+							  "stock"=>$row["quantity"],
+							  "price"=>$row["price"],
+							  "imgName"=>$row["refName"],
+							  "desc"=>$row["itemDescription"]);
+
+				$itemArray[$counter] = $item;
+				$counter++;
+			}
+			
+		}
+		else
+		{
+			// error
+			$itemArray = NULL;
+			echo "SQL error 2";
+		}
+
+		
+	}
+	else
+	{
+		$itemArray = NULL;
+	}
+
+	return $itemArray;
 }
+
+$items = generateDataFromDatabase();
+
 
 ?>
