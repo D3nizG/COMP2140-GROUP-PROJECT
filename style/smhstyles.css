@@ -13,6 +13,10 @@
     text-align: center;
     color: #f2f2f2;
   }
+.header li{
+  text-align: right;
+  list-style: none;
+}
 nav{
   background-color: #13cbe4;
   padding:10px 40px 10px 70px;
@@ -47,7 +51,49 @@ nav ul div.buttons a{
   padding:0 12px;
   color:#000;
 }
-.nav input[type=text] {
+div.searchbar input[type=text] {
+  padding: 5px;
+  border:1px solid grey;
+  float:left;
+  width:50%;
+  background: #6a6a6b;
+  font-size: 17px;
+  margin-top:2px;
+}
+.nav .searchbar {
+  float: right;
+}
+div.searchbar button{
+  padding: 6px 10px;
+  float:center;
+    margin-top:2px;
+    margin-right: 16px;
+    background: rgb(202, 196, 196);
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+/*.nav #searchbtn{
+    padding: 16px 10px;
+    margin-top: 20px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }*/
+/*.nav input[type=text] {
+  padding: 16px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  border-radius: 5px;
+  width: 20em;
+}*/
+
+/* Moving the searh to the right */
+
+/*.nav input[type=text] {
   padding: 16px;
   margin-top: 8px;
   font-size: 17px;
@@ -64,7 +110,7 @@ nav #searchbtn{
   font-size: 17px;
   border: none;
   cursor: pointer;
-}
+}*/
 h1 {
     text-align: center;
     font-weight: bold;
@@ -145,19 +191,6 @@ body {
 
 }
 
-.navbar #searchbtn{
-    padding-left: 60px;
-    padding: 6px 10px;
-    margin-top: 8px;
-    margin-right: 16px;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-}
-
-
-
 .browsebuttons{
   display: flex;
   justify-content: center;
@@ -177,6 +210,9 @@ body {
 a:hover {
   background-color:rgb(58, 10, 230);
   color: black;
+}
+h2 a:hover{
+  background-color:rgb(223, 131, 89);
 }
 
 .next-round{
