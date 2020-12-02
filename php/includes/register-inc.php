@@ -22,7 +22,7 @@ if(isset($_POST['submit']))
 	   empty($email) ||
 	   empty($conPassword))
 	{
-		redirect("../register.php?error=incompletefields");
+		redirect("../login.php?error=incompletefields");
 	}
 	elseif(!preg_match("/^[a-zA-z0-9]*/", $username))
 	{
@@ -40,7 +40,7 @@ if(isset($_POST['submit']))
 		$stmt = mysqli_stmt_init($dbs);
 		if(!mysqli_stmt_prepare($stmt, $sql))
 		{
-			redirect("../register.php?error=sqlerrorll");
+			redirect("../login.php?error=sqlerrorll");
 		}
 		else
 		{
@@ -52,7 +52,7 @@ if(isset($_POST['submit']))
 			
 			if($rowCount > 0)
 			{
-				redirect("../register.php?error=usernameoremailtaken");
+				redirect("../login.php?error=usernameoremailtaken");
 			}
 			else
 			{
@@ -60,7 +60,7 @@ if(isset($_POST['submit']))
 				$stmt = mysqli_stmt_init($dbs);
 				if(!mysqli_stmt_prepare($stmt, $sql))
 				{
-					redirect("../register.php?error=sqlerrordd");
+					redirect("../login.php?error=sqlerrordd");
 				}
 				else
 				{
@@ -77,6 +77,6 @@ if(isset($_POST['submit']))
 }
 else
 {
-	redirect("../register.php");
+	redirect("../login.php");
 }
 ?>

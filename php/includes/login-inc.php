@@ -52,11 +52,25 @@ else
 					$storedPass = $row['passcode'];
 					if(password_verify($password, $storedPass))
 					{
+                        
+                        
+						if(!isset($_SESSION))
+						{
+							session_start();
+							unset($_SESSION['sessionStart']);
+							unset($_SESSION['sessionID']);
+							unset($_SESSION['sessionUser']);
+							unset($_SESSION['cart']);
+							unset($_SESSION['total']);
+							unset($_SESSION);
+							session_destroy();														
+						}
+                        
 						session_start();
 						$_SESSION['sessionStart'] = true;
 						$_SESSION['sessionID'] = $row['id'];
 						$_SESSION['sessionUser'] = $row['username']; 
-                        
+						
 						redirect("../store.php?loginsuccess");
 						exit();
 					}

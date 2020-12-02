@@ -1,5 +1,10 @@
 <?php
 
+if(!isset($_SESSION))
+{
+    session_start();
+}
+
 if(isset($_SESSION['sessionStart']) && $_SESSION['sessionStart'] === true)
 {
 	if(isset($_POST['add']))
@@ -26,18 +31,16 @@ if(isset($_SESSION['sessionStart']) && $_SESSION['sessionStart'] === true)
 	}
 	elseif(isset($_POST['remove']))
 	{
-		echo "Remove";
+		// NOTE(afb) :: Handled elsewhere
 	}
 	else
 	{
-		echo "IDK";
-		// TODO(afb) :: No idea how you reached here so redirect.
+        // TODO(afb) :: No idea how you reached here so redirect.
 	}
 }
 else
 {
 	// NOTE(afb) :: Not signed in
-	echo "NOOOOOOOO";
 }
 
 function create_cart_component($img, $name, $price, $id){
@@ -52,7 +55,6 @@ function create_cart_component($img, $name, $price, $id){
                             <div class=\"col-md-6\">
                                 <h5 class=\"pt-2\">$name</h5>
                                 <h5 class=\"pt-2\">$$price</h5>
-                                <button type=\"submit\" class=\"btn btn-warning\">Save for Later</button>
                                 <button type=\"submit\" class=\"btn btn-danger mx-2\" name=\"remove\">Remove</button>
                             </div>
                         </div>
