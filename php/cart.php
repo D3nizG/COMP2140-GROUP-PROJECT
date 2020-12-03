@@ -89,9 +89,11 @@ if (isset($_POST['remove'])){
 						}
 						
 						?>
-		 
+						<!--Added the purchase button-->
+		            <a href = "#"><button class = "btn btn-primary btn-purchase" type="button"> PURCHASE</button></a>
 					</div>
 				</div>
+				
 				<div class="col-md-4 offset-md-1 border rounded mt-5 bg-white h-25">
 
 					<div class="pt-4">
