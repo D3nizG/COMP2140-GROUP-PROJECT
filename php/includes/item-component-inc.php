@@ -1,12 +1,12 @@
 <?php
 
 
-function create_component($id, $name, $img, $price, $desc)
+function create_component($id, $name, $img, $price, $desc, $action)
 {
 	$component = "
 
 				<div class=\"col-md-3 col-sm-6 my-3 my-md-0\">
-					<form action=\"includes/cart-inc.php\" method=\"post\">
+					<form action=\"$action\" method=\"post\">
 						<div class=\"card shadow\">
 							<div>
 								<img src=\"./../images/$img\" alt=\"Image1\" class=\"img-fluid card-img-top\">

@@ -14,19 +14,26 @@ if(isset($_SESSION['sessionStart']) && $_SESSION['sessionStart'] === true)
 			if(in_array($_POST['product_id'], $_SESSION['cart']))
 			{
 				// Do nothing
+                //echo "hee";
+				header("Location: ../store.php");
+				exit();
+
 			}
 			else
 			{
-				$_SESSION['cart'][count($_SESSION['cart'])] = $_POST['product_id'];
+				array_push($_SESSION['cart'], $_POST['product_id']);
 			}
 			header("Location: ../store.php");
+            exit();
 		}
 		else
 		{
 			// NOTE(afb) :: Nothing in cart
 			// 
 			$_SESSION['cart'] = array($_POST['product_id']);
-			header("Location: ../store.php");
+            //echo "lol";
+            header("Location: ../store.php");
+            exit();
 		}
 	}
 	elseif(isset($_POST['remove']))
@@ -47,8 +54,9 @@ if(isset($_SESSION['sessionStart']) && $_SESSION['sessionStart'] === true)
                 }
             }
         }
-		
+
         header("Location: ../cart.php");
+        exit();
 	}
 	else
 	{

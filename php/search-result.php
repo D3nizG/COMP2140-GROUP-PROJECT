@@ -5,6 +5,27 @@ session_start();
 require_once ('./includes/item-processor-inc.php');
 require_once ('./includes/item-component-inc.php');
 
+$search = trim($_GET["search"]);
+
+function nameMatch($arr)
+{
+	global $search;
+	return strpos(strtolower($arr["name"]), $search) !== false;
+}
+
+
+if(empty($search))
+{
+	header("Location: ../store.php");
+	exit();
+}
+else
+{
+	$search = strtolower($search);
+	$items = generateDataFromDatabase();
+	$result = array_filter($items, "nameMatch");
+}
+
 
 ?>
 
@@ -45,22 +66,22 @@ require_once ('./includes/item-component-inc.php');
     	<div class="container">
 			<div class="row text-center py-5">
 				<?php
-				
-				$items = generateDataFromDatabase();
+
+				$items = $result;
 
 
 				if(count($items) > 0)
 				{
-					for($i = 0; $i < count($items); $i++)
+					foreach($items as $item)
 					{
-						if($items[$i]["stock"] > 0)
+						if($item["stock"] > 0)
 						{
 							
-							create_component($items[$i]["id"],
-											 $items[$i]["name"],
-											 $items[$i]["imgName"],
-											 $items[$i]["price"],
-											 $items[$i]["desc"],
+							create_component($item["id"],
+											 $item["name"],
+											 $item["imgName"],
+											 $item["price"],
+											 $item["desc"],
 											 "includes/cart-inc.php");
 						}
 					}
