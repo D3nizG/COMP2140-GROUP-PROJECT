@@ -27,24 +27,18 @@
 				</ul>
 			</div>
 		</div>
-        
 
-		<!--         <div class="footer">
-             <div class="baseline">
-			 <h6>Opening times</h6>
-			 <p>Mon - Fri 9:00am - 5:00pm</p>
-			 <p>Sat 9:00am - 8:00pm</p>
-			 <p>Sun 9:00am - 4:00pm</p>
-			 <div class="social">
-
-			 <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
-			 <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
-			 <i class="fa fa-google-plus-square fa-2x" aria-hidden="true"></i>
-			 <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-			 </div>
-			 </div> 
-		-->
-
+		<style>
+		 .center {
+			 display: block;
+			 margin-left: auto;
+			 margin-right: auto;
+			 width: 50%;
+		 }
+		</style>
+		<img class="center" src="../images/homepagepic.png" alt="Seven Miles Hardware <3" width="500"
+			 height="500">
+		
 		<?php include("../htmls/footer.html");?>
 	</body>
 </html>
