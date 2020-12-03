@@ -2,7 +2,7 @@
 
 require 'database-manager.php';
 
-
+session_start();
 
 if(isset($_SESSION['sessionUser']) && $_SESSION['sessionUser'] === 'admin')
 {
@@ -18,30 +18,44 @@ if(isset($_SESSION['sessionUser']) && $_SESSION['sessionUser'] === 'admin')
 	   empty($price) ||
 	   empty($desc))
 	{
-		echo "Hello";
-		//header("Location: ../admin.php");
+		header("Location: ../admin.php");
 	}
 	else
 	{
 		if($dbsActive)
 		{
-			$sql = "SELECT INTO items (itemName, quantity, price, refName, totalSold, itemDescription)" .
-				   "('$itemName', $quan, $price,'$img', 0, '$desc')";
+
+			$sql = "INSERT INTO items (itemName, quantity, price, refName, totalSold, itemDescription) VALUES (?, ?, ?, ?, ?, ?)";
+			$zero = 0;
 			
-			if(mysqli_query($dbs, $sql))
+			$stmt = mysqli_stmt_init($dbs);
+			if(!mysqli_stmt_prepare($stmt, $sql))
 			{
-				echo "good";
+				header("Location: ../admin.php?error=sqlerrordd");
 			}
 			else
 			{
-				echo "Shit";
+
+				mysqli_stmt_bind_param($stmt, "ssssss", $itemName, $quan, $price, $img, $zero, $desc);
+				if(mysqli_stmt_execute($stmt))
+				{
+					header("Location: ../admin.php?success=itemadded");
+				}
+				else
+				{
+					header("Location: ../admin.php?error=sqlerrordd");
+				}
 			}
+			
 		}
 		else
 		{
-			echo "bad";
+			echo "real bad";
 		}
 	}
 }
-
+else
+{
+    echo "Very Bad";
+}
 ?>
