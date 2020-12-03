@@ -96,12 +96,15 @@ require_once ('./includes/cart-inc.php');
 								<h6>Amount Payable</h6>
 							</div>
 							<div class="col-md-6">
-								<h6>$<?php echo $_SESSION['total']; ?></h6>
-								<h6 class="text-success">FREE</h6>
-								<hr>
-								<h6>$<?php
-									 echo $_SESSION['total'];
-									 ?></h6>
+								<form action="checkout.php" method="post">
+									<h6>$<?php echo $_SESSION['total']; ?></h6>
+									<h6 class="text-success">FREE</h6>
+									<hr>
+									<h6>$<?php
+										 echo $_SESSION['total'];
+										 ?></h6>
+									<button type="submit" class="btn btn-danger mx-2" name="checkout">Checkout</button>
+								</form>
 							</div>
 						</div>
 					</div>

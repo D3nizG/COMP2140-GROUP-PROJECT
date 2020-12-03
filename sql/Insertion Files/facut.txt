@@ -1,0 +1,5 @@
+INSERT INTO Items( itemName, quantity, price,
+ refName, totalSold, itemDescription)
+  VALUES ("Kitchen Faucet", 10, 3500.00, "facuet.jpg", 6, 
+  "First step in any kitchen.");
+
