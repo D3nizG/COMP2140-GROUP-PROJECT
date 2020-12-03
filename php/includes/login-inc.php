@@ -52,8 +52,7 @@ else
 					$storedPass = $row['passcode'];
 					if(password_verify($password, $storedPass))
 					{
-                        
-                        
+                                                
 						if(!isset($_SESSION))
 						{
 							session_start();
@@ -70,9 +69,19 @@ else
 						$_SESSION['sessionStart'] = true;
 						$_SESSION['sessionID'] = $row['id'];
 						$_SESSION['sessionUser'] = $row['username']; 
+
+
+                        if($_SESSION['sessionUser'] == 'admin')
+                        {
+                            redirect("../admin.php?loginsuccess");
+                            exit();
+                        }
+                        else
+                        {
+                            redirect("../home.php?loginsuccess");
+                            exit();    
+                        }
 						
-						redirect("../store.php?loginsuccess");
-						exit();
 					}
 					else
 					{
