@@ -1,0 +1,9 @@
+USE SevenMilesHardwareDB;
+DROP TABLE IF EXISTS Users;
+CREATE TABLE Users (
+     id INT AUTO_INCREMENT NOT NULL,
+    username VARCHAR(64) UNIQUE NOT NULL,
+    passcode VARCHAR(255) NOT NULL,
+    email VARCHAR(64) UNIQUE NOT NULL,
+    dateCreated DATE,
+    PRIMARY KEY(id));
