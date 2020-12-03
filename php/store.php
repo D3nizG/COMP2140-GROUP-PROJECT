@@ -35,9 +35,9 @@ require_once ('./includes/item-component-inc.php');
 					</li>
 					
 				</ul>
-				<form class="form-inline mt-2 mt-md-0">
+				<form method="get" action="includes/search-inc.php" class="form-inline mt-2 mt-md-0">
 					<input name="search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					<button name="submit" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 				</form>
 			</div>
 		</div>
