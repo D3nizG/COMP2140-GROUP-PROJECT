@@ -9,7 +9,7 @@ function create_component($id, $name, $img, $price, $desc)
 					<form action=\"includes/cart-inc.php\" method=\"post\">
 						<div class=\"card shadow\">
 							<div>
-								<img src=\"./../images/cement.jpg\" alt=\"Image1\" class=\"img-fluid card-img-top\">
+								<img src=\"./../images/$img\" alt=\"Image1\" class=\"img-fluid card-img-top\">
 							</div>
 							<div class=\"card-body\">
 								<h5 class=\"card-title\">$name</h5>
