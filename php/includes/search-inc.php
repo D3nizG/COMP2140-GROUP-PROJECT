@@ -20,7 +20,7 @@ else
 {
 	$search = strtolower($search);
 	$items = generateDataFromDatabase();
-	print_r(array_filter($items, "nameMatch"));
+	$result = array_filter($items, "nameMatch");
 }
 
 ?>

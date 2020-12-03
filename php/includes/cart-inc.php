@@ -11,7 +11,7 @@ if(isset($_SESSION['sessionStart']) && $_SESSION['sessionStart'] === true)
 	{
 		if(isset($_SESSION['cart']))
 		{
-			if(in_array($_POST['product_id']))
+			if(in_array($_POST['product_id'], $_SESSION['cart']))
 			{
 				// Do nothing
 			}
@@ -32,6 +32,23 @@ if(isset($_SESSION['sessionStart']) && $_SESSION['sessionStart'] === true)
 	elseif(isset($_POST['remove']))
 	{
 		// NOTE(afb) :: Handled elsewhere
+		
+		if ($_GET['action'] == 'remove')
+		{
+            foreach ($_SESSION['cart'] as $key => $value)
+			{
+                if($value == $_GET['id'])
+				{
+                    unset($_SESSION['cart'][$key]);
+					if(count($_SESSION['cart']) === 0)
+					{
+						$_SESSION['cart'] = NULL;
+					}
+                }
+            }
+        }
+		
+        header("Location: ../cart.php");
 	}
 	else
 	{
@@ -41,12 +58,14 @@ if(isset($_SESSION['sessionStart']) && $_SESSION['sessionStart'] === true)
 else
 {
 	// NOTE(afb) :: Not signed in
+    header("Location: ../login.php");
+    exit();
 }
 
 function create_cart_component($img, $name, $price, $id){
     $element = "
     
-    <form action=\"cart.php?action=remove&id=$id\" method=\"post\" class=\"cart-items\">
+    <form action=\"includes/cart-inc.php?action=remove&id=$id\" method=\"post\" class=\"cart-items\">
                     <div class=\"border rounded\">
                         <div class=\"row bg-white\">
                             <div class=\"col-md-3 pl-0\">

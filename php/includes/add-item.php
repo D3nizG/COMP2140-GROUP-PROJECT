@@ -3,6 +3,7 @@
 require 'database-manager.php';
 
 
+
 if(isset($_SESSION['sessionUser']) && $_SESSION['sessionUser'] === 'admin')
 {
 	$itemName = trim($_POST['name']);

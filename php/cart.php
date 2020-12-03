@@ -5,19 +5,6 @@ session_start();
 require_once ('./includes/item-processor-inc.php');
 require_once ('./includes/cart-inc.php');
 
-
-if (isset($_POST['remove'])){
-	if ($_GET['action'] == 'remove'){
-		foreach ($_SESSION['cart'] as $key => $value){
-			if($value == $_GET['id']){
-				unset($_SESSION['cart'][$key]);
-				//echo "<script>alert('Product has been Removed...!')</script>";
-				//echo "<script>window.location = 'cart.php'</script>";
-			}
-		}
-	}
-}
-
 ?>
 
 <!doctype html>
